@@ -1,3 +1,5 @@
+# DATA WRANGLING NO R - 1.1
+
 # Instalação do "tidyverse"
 install.packages("tidyverse")
 
@@ -51,6 +53,8 @@ nova_base_pipe <- nova_base %>% rename(obs = observacoes,
 
 # Forma para remover um objeto criado no R:
 rm(nova_base_pipe)
+
+
 
 # O comando RENAME também poder se basear na posição
 nova_base %>% rename(obs = 1,
@@ -203,9 +207,10 @@ rm(base_exclui_rename)
 # SELECT: Responsável por selecionar variáveis e manter as variáveis no dataset.
 
 base_select_1 <- select(nova_base, observacoes, tempo)      # Especificando as variáveis.
-base_select_2 <- select(nova_base,  everything(), -perfil)  # Todas menos uma variável.
+base_select_2 <- select(nova_base, everything(), -perfil)  # Todas menos uma variável.
 base_select_3 <- select(nova_base, observacoes:distancia)   # Intervalo de variáveis.
 base_select_4 <- select(nova_base, starts_with("p"))        # Com algum prefixo comum.
+base_teste <- select(nova_base, perfil, everything())
 
 # O SELECT também é capaz de reposicionar as variáveis do dataset.
 
